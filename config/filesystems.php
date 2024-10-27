@@ -57,6 +57,11 @@ return [
             'throw' => false,
         ],
 
+        'samlidp' => [
+            'driver' => 'local',
+            'root' => storage_path() . '/samlidp',
+        ]
+
     ],
 
     /*

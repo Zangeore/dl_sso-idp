@@ -6,10 +6,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "codegreencreative/laravel-samlidp": "^5.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-latest",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
