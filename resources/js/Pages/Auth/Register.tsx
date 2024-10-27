@@ -5,8 +5,12 @@ import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
+import SSOInputs from "@/Components/SSOInputs";
 
-export default function Register() {
+export default function Register({
+                                     SAMLRequest,
+                                     RelayState
+                                 }: { SAMLRequest: string, RelayState: string }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
@@ -28,6 +32,7 @@ export default function Register() {
 
             <form onSubmit={submit}>
                 <div>
+                    <SSOInputs SAMLRequest={SAMLRequest} RelayState={RelayState} />
                     <InputLabel htmlFor="name" value="Name" />
 
                     <TextInput

@@ -6,13 +6,18 @@ import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
+import SSOInputs from "@/Components/SSOInputs";
 
 export default function Login({
     status,
     canResetPassword,
+    SAMLRequest,
+    RelayState
 }: {
     status?: string;
     canResetPassword: boolean;
+    SAMLRequest: string;
+    RelayState: string;
 }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
@@ -40,6 +45,7 @@ export default function Login({
 
             <form onSubmit={submit}>
                 <div>
+                    <SSOInputs SAMLRequest={SAMLRequest} RelayState={RelayState} />
                     <InputLabel htmlFor="email" value="Email" />
 
                     <TextInput
